@@ -20,5 +20,5 @@ adapter.on('ready', function() {
     if (TIMING > 10080) { TIMING = 10080; } //max: 1 woche
         adapter.log.info("timing begrenz");
 
-    adapter.log.info("IP: " + IP + "; Timing: " + Timing);
+    adapter.log.info("IP: " + IP + "; Timing: " + TIMING);
 });
