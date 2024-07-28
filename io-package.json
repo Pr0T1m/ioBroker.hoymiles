@@ -1,11 +1,19 @@
 {
     "common": {
         "name": "hoymiles",
-        "version": "1.0.0",
+        "version": "0.0.2",
         "news": {
-            "1.0.0": {
+            "0.0.0": {
                 "en": "ioBroker adapter for HoyMiles - photovoltaics",
                 "de": "ioBroker Adapter für HoyMiles - Photovoltaik"
+            },
+            "0.0.1": {
+                "en": "added folders and datapoints",
+                "de": "ordner und datenpunkte hinzugefügt"
+            },
+            "0.0.2": {
+                "en": "added testdata",
+                "de": "testdaten hinzugefügt"
             }
         },
         "title": "HoyMiles",
