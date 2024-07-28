@@ -1,0 +1,24 @@
+{
+    "energy": [{
+        "current": 45,
+        "lastHour": 60,
+        "day": 2345,
+        "week": 15345,
+        "month": 46798,
+        "year": 123356,
+        "total": 123356
+    }, {
+        "current": 44,
+        "lastHour": 54,
+        "day": 2101,
+        "week": 14225,
+        "month": 45932,
+        "year": 124723,
+        "total": 124723
+    }],
+    "info": {
+        "serialNumber": 19872530152,
+        "firmware": "1.0.2",
+        "temperatur": 34
+    }
+}
