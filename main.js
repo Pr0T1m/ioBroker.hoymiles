@@ -51,9 +51,11 @@ adapter.on('ready', function() {
     adapter.log.info("IP: " + IP + "; Timing: " + TIMING);
 
     jsonData = require("./data.json")
-    
+
     // Hauptordner dynamisch erstellen
     Object.keys(jsonData).forEach(key => {
+        adapter.log.info("Hauptordner erstellen");
+
         const basePath = key;
         adapter.setObjectNotExists(basePath, {
             type: 'channel',
@@ -62,7 +64,9 @@ adapter.on('ready', function() {
             },
             native: {}
         });
+        adapter.log.info("Hauptordner erstellt");
+
         createDataPoints(adapter, basePath, jsonData[key]);
     });
-    
+
 });
