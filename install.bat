@@ -1,0 +1,3 @@
+@echo off
+echo Installing Python...
+powershell -Command "Start-Process 'python-3.9.6-amd64.exe' -ArgumentList '/quiet InstallAllUsers=1 PrependPath=1' -Wait"

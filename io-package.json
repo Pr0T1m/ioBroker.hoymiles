@@ -15,7 +15,7 @@
         },
         "desc": {
             "en": "Returns values from HoyMiles-photovoltaic systems.",
-            "de": "Gibt Werte von HoyMiles-PhotovoltaikAnlagen zurück."
+            "de": "Gibt Werte von HoyMiles-Wechselrichter zurück."
         },
         "authors": [
             "Author <someone@example.com>"
@@ -30,7 +30,7 @@
             "home automation"
         ],
         "license": "MIT",
-        "platform": "Javascript/Node.js",
+        "platform": "Javascript/Node.js ,Python",
         "main": "main.js",
         "icon": "hoymiles.png",
         "enabled": true,
