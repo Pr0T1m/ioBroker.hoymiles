@@ -17,30 +17,57 @@ function createDataPoints(adapter, basePath, data) {
     if (Array.isArray(data)) {
         data.forEach((value, index) => {
             const newPath = `${basePath}.${index}`;
-            adapter.setObjectNotExists(newPath, {
-                type: 'channel',
-                common: {
-                    name: `${basePath} ${index}`
-                },
-                native: {}
-            });
-            createDataPoints(adapter, newPath, value);
+            if (typeof value === 'object' && value !== null) {
+                adapter.setObjectNotExists(newPath, {
+                    type: 'channel',
+                    common: {
+                        name: `${basePath} ${index}`
+                    },
+                    native: {}
+                });
+                createDataPoints(adapter, newPath, value);
+            } else {
+                adapter.setObjectNotExists(newPath, {
+                    type: 'state',
+                    common: {
+                        name: `${basePath} ${index}`,
+                        type: typeof value,
+                        role: 'value',
+                        read: true,
+                        write: true
+                    },
+                    native: {}
+                });
+                adapter.setState(newPath, value);
+            }
         });
-    } else if (typeof data === 'object' && !Array.isArray(data)) {
+    } else if (typeof data === 'object' && data !== null) {
         Object.keys(data).forEach(key => {
-            const id = `${basePath}.${key}`;
-            adapter.setObjectNotExists(id, {
-                type: 'state',
-                common: {
-                    name: key,
-                    type: typeof data[key], // Dynamischer Typ basierend auf dem Wert
-                    role: 'value',
-                    read: true,
-                    write: true
-                },
-                native: {}
-            });
-            adapter.setState(id, data[key]);
+            const value = data[key];
+            const newPath = `${basePath}.${key}`;
+            if (typeof value === 'object' && value !== null) {
+                adapter.setObjectNotExists(newPath, {
+                    type: 'channel',
+                    common: {
+                        name: key
+                    },
+                    native: {}
+                });
+                createDataPoints(adapter, newPath, value);
+            } else {
+                adapter.setObjectNotExists(newPath, {
+                    type: 'state',
+                    common: {
+                        name: key,
+                        type: typeof value,
+                        role: 'value',
+                        read: true,
+                        write: true
+                    },
+                    native: {}
+                });
+                adapter.setState(newPath, value);
+            }
         });
     }
 }
