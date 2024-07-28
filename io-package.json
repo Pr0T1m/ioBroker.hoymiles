@@ -1,0 +1,69 @@
+{
+    "common": {
+        "name": "hoymiles",
+        "version": "1.0.0",
+        "news": {
+            "1.0.0": {
+                "en": "ioBroker adapter for HoyMiles - photovoltaics",
+                "de": "ioBroker Adapter für HoyMiles - Photovoltaik"
+            }
+        },
+        "title": "HoyMiles",
+        "titleLang": {
+            "en": "HoyMiles ioBroker adapter",
+            "de": "HoyMiles ioBroker Adapter"
+        },
+        "desc": {
+            "en": "Returns values from HoyMiles-photovoltaic systems.",
+            "de": "Gibt Werte von HoyMiles-PhotovoltaikAnlagen zurück."
+        },
+        "authors": [
+            "Author <someone@example.com>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "Pr0T1m",
+            "Energy",
+            "Solar",
+            "Photovoltaics",
+            "Smart Home",
+            "home automation"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "hoymiles.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/Pr0T1m/ioBroker.hoymiles/master/admin/dmxface.png",
+        "readme": "https://github.com/Pr0T1m/ioBroker.hoymiles/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "general",
+        "compact": true,
+        "materialize": true,
+        "materializeTab": true,
+        "adminTab": {
+            "singleton": true,
+            "name": {
+                "en": "Pr0T1m",
+                "de": "Pr0T1m"
+            },
+            "link": "www.example.at",
+            "fa-icon": "info"
+        },
+        "supportCustoms": true,
+        "dependencies": [{
+            "js-controller": ">=1.4.2"
+        }]
+    },
+    "native": {
+        "ipaddress": "192.168.0.0",
+        "requesttiming": "1000"
+    },
+    "objects": [
+
+    ],
+    "instanceObjects": [
+
+    ]
+}
