@@ -37,6 +37,7 @@ function createDataPoints(basePath, value, name) {
         });
         prepareData(newPath, value);
     } else {
+        adapter.log.info("daatenpunkt erstellen")
         adapter.setObjectNotExists(newPath, {
             type: 'state',
             common: {
