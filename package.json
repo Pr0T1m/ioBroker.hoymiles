@@ -1,38 +1,38 @@
 {
-   "name":"iobroker.hoymiles",
-   "version":"1.0.0",
-   "description":"HoyMiles adapter for ioBroker",
-   "author":{
-      "name":"Tim H.",
-      "email":"someone@example.com"
-   },
-   "homepage":"https://github.com/Pr0T1m/ioBroker.hoymiles",
-   "license":"MIT",
-   "keywords":[
-      "ioBroker",
-      "Pr0T1m",
-      "Energy",
-      "Solar",
-      "Photovoltaics",
-      "Smart Home",
-      "home automation"
-   ],
-   "repository":{
-      "type":"git",
-      "url":"https://github.com/Pr0T1m/ioBroker.hoymiles"
-   },
-   "dependencies":{
-      "@iobroker/adapter-core":"^1.0.3"
-   },
-   "devDependencies":{
+    "name": "iobroker.hoymiles",
+    "version": "1.0.1",
+    "description": "HoyMiles adapter for ioBroker",
+    "author": {
+        "name": "Tim H.",
+        "email": "someone@example.com"
+    },
+    "homepage": "https://github.com/Pr0T1m/ioBroker.hoymiles",
+    "license": "MIT",
+    "keywords": [
+        "ioBroker",
+        "Pr0T1m",
+        "Energy",
+        "Solar",
+        "Photovoltaics",
+        "Smart Home",
+        "home automation"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Pr0T1m/ioBroker.hoymiles"
+    },
+    "dependencies": {
+        "@iobroker/adapter-core": "^1.0.3"
+    },
+    "devDependencies": {
 
-   },
-   "main":"main.js",
-   "scripts":{
+    },
+    "main": "main.js",
+    "scripts": {
 
-   },
-   "bugs":{
-      "url":"https://github.com/Pr0T1m/ioBroker.hoymiles/issues"
-   },
-   "readmeFilename":"README.md"
+    },
+    "bugs": {
+        "url": "https://github.com/Pr0T1m/ioBroker.hoymiles/issues"
+    },
+    "readmeFilename": "README.md"
 }

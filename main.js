@@ -4,10 +4,10 @@
 const adaptername = "hoymiles"
 
 const utils = require('@iobroker/adapter-core');
-let adapter = utils.Adapter(adaptername);
+var adapter = utils.Adapter(adaptername);
 
-let IP = "0.0.0.0"; //HoyMiles IP address
-let TIMING = 1; //Request timing
+var IP = "0.0.0.0"; //HoyMiles IP address
+var TIMING = 1; //Request timing
 
 adapter.on('ready', function() {
     adapter.log.info("Gestartet");

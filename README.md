@@ -11,7 +11,7 @@ https://github.com/Pr0T1m/ioBroker.hoymiles.git
 <br>Create an instance of the adapter.
 
 ## Adapter configuration
-IP address:  IP-Adress from your Solar-System.
+IP address:  IP-Adress from your Solar-System.<br>
 Requesttime: How often would you get new information (min. 0.5min).
 
 ##  Changelog
