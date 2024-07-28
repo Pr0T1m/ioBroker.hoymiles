@@ -1,6 +1,6 @@
 {
     "name": "iobroker.hoymiles",
-    "version": "1.0.1",
+    "version": "0.0.2",
     "description": "HoyMiles adapter for ioBroker",
     "author": {
         "name": "Tim H.",
