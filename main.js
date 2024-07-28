@@ -9,6 +9,9 @@ var adapter = utils.Adapter(adaptername);
 var IP = "0.0.0.0"; //HoyMiles IP address
 var TIMING = 1; //Request timing
 
+let jsonData = require("./data.json")
+
+
 // Funktion zum Erstellen von Datenpunkten und Ordnern
 function createDataPoints(adapter, basePath, data) {
     if (Array.isArray(data)) {
@@ -50,7 +53,6 @@ adapter.on('ready', function() {
 
     adapter.log.info("IP: " + IP + "; Timing: " + TIMING);
 
-    jsonData = require("./data.json")
 
     // Hauptordner dynamisch erstellen
     Object.keys(jsonData).forEach(key => {
