@@ -14,9 +14,11 @@ adapter.on('ready', function() {
 
     IP = adapter.config.ipaddress;
     TIMING = adapter.config.requesttiming;
-
+    adapter.log.info("auf config geändert");
+    
     if (TIMING < 0.5) { TIMING = 0.5; } // min: halbe minute
     if (TIMING > 10080) { TIMING = 10080; } //max: 1 woche
+        adapter.log.info("timing begrenz");
 
     adapter.log.info("IP: " + IP + "; Timing: " + Timing);
 });
