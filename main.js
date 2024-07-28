@@ -16,31 +16,31 @@ let jsonData = require("./data.json")
 function createDataPoints(adapter, basePath, data) {
     if (Array.isArray(data)) {
         data.forEach((value, index) => {
-            const id = `${basePath}.${index}`;
+            const newPath = `${basePath}.${index}`;
+            adapter.setObjectNotExists(newPath, {
+                type: 'channel',
+                common: {
+                    name: `${basePath} ${index}`
+                },
+                native: {}
+            });
+            createDataPoints(adapter, newPath, value);
+        });
+    } else if (typeof data === 'object') {
+        Object.keys(data).forEach(key => {
+            const id = `${basePath}.${key}`;
             adapter.setObjectNotExists(id, {
                 type: 'state',
                 common: {
-                    name: `${basePath} ${index}`,
-                    type: 'string',
+                    name: key,
+                    type: 'mixed', // oder den spezifischen Typ wie 'number', 'string', etc.
                     role: 'value',
                     read: true,
                     write: true
                 },
                 native: {}
             });
-            adapter.setState(id, value);
-        });
-    } else if (typeof data === 'object') {
-        Object.keys(data).forEach(key => {
-            const newPath = `${basePath}.${key}`;
-            adapter.setObjectNotExists(newPath, {
-                type: 'channel',
-                common: {
-                    name: key
-                },
-                native: {}
-            });
-            createDataPoints(adapter, newPath, data[key]);
+            adapter.setState(id, data[key]);
         });
     }
 }
