@@ -29,7 +29,7 @@
     },
     "main": "main.js",
     "scripts": {
-        "install": "python install.py"
+
     },
     "bugs": {
         "url": "https://github.com/Pr0T1m/ioBroker.hoymiles/issues"
