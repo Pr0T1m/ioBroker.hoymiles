@@ -26,14 +26,14 @@ function createDataPoints(adapter, basePath, data) {
             });
             createDataPoints(adapter, newPath, value);
         });
-    } else if (typeof data === 'object') {
+    } else if (typeof data === 'object' && !Array.isArray(data)) {
         Object.keys(data).forEach(key => {
             const id = `${basePath}.${key}`;
             adapter.setObjectNotExists(id, {
                 type: 'state',
                 common: {
                     name: key,
-                    type: 'mixed', // oder den spezifischen Typ wie 'number', 'string', etc.
+                    type: typeof data[key], // Dynamischer Typ basierend auf dem Wert
                     role: 'value',
                     read: true,
                     write: true
@@ -44,6 +44,7 @@ function createDataPoints(adapter, basePath, data) {
         });
     }
 }
+
 
 adapter.on('ready', function() {
     adapter.log.info("Gestartet");
