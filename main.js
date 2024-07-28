@@ -27,7 +27,12 @@ function prepareData(basePath, data) {
 
 function createDataPoints(basePath, value, name) {
     const newPath = `${basePath}.${name}`;
-    if ((typeof value === 'object' || Array.isArray(value)) && value !== null) {
+    adapter.log.info(name)
+    adapter.log.info(basePath)
+
+    if (typeof value === 'object' || Array.isArray(value)) {
+        adapter.log.info("ordner erstellen")
+
         adapter.setObjectNotExists(newPath, {
             type: 'channel',
             common: {
