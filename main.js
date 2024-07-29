@@ -18,7 +18,7 @@ function prepareData(basePath, data) {
         data.forEach((value, index) => {
             createDataPoints(basePath, value, index);
         });
-    } else if (typeof value === 'object') {
+    } else if (typeof data === 'object') {
         Object.entries(data).forEach(([key, value]) => {
             createDataPoints(basePath, value, key);
         });
