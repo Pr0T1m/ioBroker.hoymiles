@@ -32,14 +32,20 @@ function createDataPoints(basePath, value, name) {
 
     if (typeof value === 'object' || Array.isArray(value)) {
         adapter.log.info("ordner erstellen")
-
-        adapter.setObjectNotExists(newPath, {
-            type: 'channel',
-            common: {
-                name: `${basePath} ${name}`
-            },
-            native: {}
+        adapter.getObject(newPath, (err, obj) => {
+            if (err)
+                adapter.log.info(`fehler:  ${err}`)
+            else if (!obj) {
+                adapter.setObjectNotExists(newPath, {
+                    type: 'channel',
+                    common: {
+                        name: `${basePath} ${name}`
+                    },
+                    native: {}
+                });
+            }
         });
+
         prepareData(newPath, value);
     } else {
         adapter.log.info("daatenpunkt erstellen")
